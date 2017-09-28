@@ -1,7 +1,9 @@
-<div>
-  <label>Domain: </label>
-  <input [(ngModel)]="domain" placeholder="Domain"/>
-  <button (click)="searchDomain()">Locate</button>
+<div class="container">
+  <app-domain-form></app-domain-form>
 </div>
 
-<agm-map [latitude]="domainData.latitude" [longitude]="domainData.longitude"></agm-map>
+<div class="jumbotron">
+  <div class="container">
+    <app-map></app-map>
+  </div>
+</div>

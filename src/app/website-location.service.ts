@@ -2,12 +2,18 @@ import { Injectable } from '@angular/core';
 import { Http }       from '@angular/http';
 
 import { Observable }     from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
 import 'rxjs/add/operator/map';
 
 import { DomainData } from './domain-data';
 
 @Injectable()
 export class WebsiteLocationService {
+
+  domainData: any;
+  private domainDataSource = new BehaviorSubject<any>(this.domainData);
+  currentDomainData = this.domainDataSource.asObservable();
 
   constructor(private http: Http) {}
 
@@ -24,6 +30,14 @@ export class WebsiteLocationService {
     return this.http
                 .get(`http://freegeoip.net/json/${validatedDomain}`)
                 .map(response => response.json());
+  }
+
+  setDomain(domain: DomainData): void {
+    this.domainData = domain;
+  }
+
+  changeDomain(domain): void {
+    this.domainDataSource.next(domain);
   }
 
 }

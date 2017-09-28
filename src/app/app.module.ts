@@ -7,11 +7,17 @@ import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 
 import { WebsiteLocationService } from './website-location.service';
+import { DomainFormComponent } from './domain-form/domain-form.component';
+import { DomainDetailComponent } from './domain-detail/domain-detail.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DomainFormComponent,
+    DomainDetailComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
