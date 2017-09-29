@@ -13,22 +13,23 @@ import { Observable } from 'rxjs/Observable';
 export class DomainFormComponent implements OnInit {
 
   @Input() domain: string;
+
+  myLocation: string;
   domainData: any;
+  myLocationData: any;
 
-  constructor(private wblService: WebsiteLocationService) {}
-
-  ngOnInit(): void {
+  constructor(private wblService: WebsiteLocationService) {
     this.domain = '';
+    this.myLocation = '';    
     this.searchDomain();
   }
 
-  searchDomain(): void {
-    this.wblService.search(this.domain).subscribe( 
-      data => {
-        this.domainData = data;
-        this.wblService.setDomain(this.domainData);
-      },
-      error => console.log('Error fetching stories')
+  ngOnInit(): void {}
+
+  searchDomain(host: string = this.domain): void {
+    this.wblService.search(host).subscribe( 
+      data => this.domainData = data,
+      error => console.log('Error fetching Domain')
     );
   }
 

@@ -1,48 +1,54 @@
-<div class="form-group">
-  <label for="inputEmail3" class="col-sm-2 control-label">IP</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="inputEmail3" placeholder="IP" value="{{domainData.ip}}">
-  </div>
-</div>
+<h2 class="h2">Estimated location</h2>
 
-<div class="form-group">
-  <label for="inputEmail3" class="col-sm-2 control-label">Country</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="inputEmail3" placeholder="Country" value="{{domainData.country}}">
+<form #domainDetailForm="ngForm">
+  <div class="form-group">
+    <label for="ip" class="col-sm-2 control-label">IP</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="ip" type="text" class="form-control" id="ip" name="ip" readonly>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <label for="inputEmail3" class="col-sm-2 control-label">Region</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="inputEmail3" placeholder="Region" value="{{domainData.region}}">
+  <div class="form-group">
+    <label for="country" class="col-sm-2 control-label">Country</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="country" type="text" class="form-control" id="countryName" name="country" readonly>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <label for="inputEmail3" class="col-sm-2 control-label">City</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="inputEmail3" placeholder="City" value="{{domainData.city}}">
+  <div class="form-group">
+    <label for="region" class="col-sm-2 control-label">Region</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="region" type="text" class="form-control" id="region" name="region" readonly>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <label for="inputEmail3" class="col-sm-2 control-label">Zip Code</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="inputEmail3" placeholder="Zip Code" value="{{domainData.zip_code}}">
+  <div class="form-group">
+    <label for="city" class="col-sm-2 control-label">City</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="city" type="text" class="form-control" id="city" name="city" readonly>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <label for="inputEmail3" class="col-sm-2 control-label">Latitude</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="inputEmail3" placeholder="Latitude" value="{{domainData.latitude}}">
+  <div class="form-group">
+    <label for="zipCode" class="col-sm-2 control-label">Zip Code</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="zipCode" type="text" class="form-control" id="zipCode" name="zipCode" readonly>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <label for="inputEmail3" class="col-sm-2 control-label">Longitude</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="inputEmail3" placeholder="Longitude" value="{{domainData.longitude}}">
+  <div class="form-group">
+    <label for="latitude" class="col-sm-2 control-label">Latitude</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="latitude" type="text" class="form-control" id="latitude" name="latitude" readonly>
+    </div>
   </div>
-</div>
+
+  <div class="form-group">
+    <label for="longitude" class="col-sm-2 control-label">Longitude</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="longitude" type="text" class="form-control" id="longitude" name="longitude" readonly>
+    </div>
+  </div>
+
+  <button class="btn btn-default" (click)="domainDetailForm.reset()">Reset</button>
+</form>
